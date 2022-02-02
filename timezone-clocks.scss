@@ -1,0 +1,149 @@
+.paragraph--type--timezone-clocks {
+  padding-bottom: 1px;
+  padding-top: 30px;
+
+  @media (min-width: 768px) {
+    padding-bottom: 75px;
+    padding-top: 105px;
+  }
+
+  .clocks-wrapper {
+    @media (min-width: 600px) {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 -16px;
+    }
+
+    @media (min-width: 768px) {
+      margin-top: 80px;
+    }
+
+    .clock-wrapper {
+      margin-bottom: 30px;
+      position: relative;
+
+      @media (min-width: 600px) {
+        width: 50%;
+        padding: 0 16px;
+      }
+
+      @media (min-width: 1200px) {
+        width: 33.33%;
+      }
+
+      .field-wrapper {
+        border-radius: 12px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .jcgmt-container {
+        bottom: 15px;
+        padding: 0;
+        position: absolute;
+        right: 15px;
+
+        @media (min-width: 768px) {
+          bottom: 32px;
+          right: 22px;
+        }
+
+        .jcgmt-clockHolder {
+          overflow: visible;
+          width: 60px;
+
+          @media (min-width: 768px) {
+            width: 88px;
+          }
+
+          .jcgmt-rotatingWrapper {
+            height: 60px;
+            width: 60px;
+
+            @media (min-width: 768px) {
+              height: 88px;
+              width: 88px;
+            }
+          }
+
+          &[title*="AM"]::before,
+          &[title*="PM"]::before {
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            content: '';
+            display: block;
+            height: 16px;
+            left: -10px;
+            position: absolute;
+            top: -10px;
+            width: 16px;
+
+            @media (min-width: 768px) {
+              height: 20px;
+              left: -15px;
+              top: -15px;
+              width: 20px;
+            }
+          }
+
+          &[title*="AM"]:before {
+            background-image: url("../../images/icons/sun.svg");
+          }
+
+          &[title*="PM"]:before {
+            background-image: url("../../images/icons/moon.svg");
+          }
+        }
+      }
+
+      .field--name-field-tzc-city-background img {
+        object-fit: cover;
+        width: 100%;
+      }
+
+      .field-city-country {
+        backdrop-filter: blur(40px);
+        background-color: var(--color-3-20);
+        border-radius: 12px;
+        bottom: -1px;
+        left: 0;
+        padding: 16px;
+        position: absolute;
+        width: 100%;
+
+        @media (min-width: 768px) {
+          padding: 32px 28px;
+        }
+
+        .field {
+          line-height: var(--line-height-1-40);
+          width: calc(100% - 60px);
+
+          @media (min-width: 768px) {
+            width: calc(100% - 100px);
+          }
+        }
+
+        .field--name-field-tzc-city {
+          font-size: var(--font-size-24);
+          font-weight: var(--font-weight-medium);
+          margin-bottom: 5px;
+
+          @media (min-width: 768px) {
+            font-size: var(--font-size-40);
+            margin-bottom: 10px;
+          }
+        }
+
+        .field--name-field-tzc-country {
+          color: var(--color-1-50);
+
+          @media (min-width: 768px) {
+            font-size: var(--font-size-20);
+          }
+        }
+      }
+    }
+  }
+}
